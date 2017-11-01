@@ -1,0 +1,36 @@
+服务器：
+(1)
+网络初始化
+
+(2)等待客户端连接
+while(1)
+{
+	accept();
+
+	//创建线程
+	{
+		recv();
+
+		login_mode(判断是root or user权限);
+
+		send(发送权限号);
+
+		while(1)
+		{
+			recv();
+			switch(root_op)
+				case 1:
+					server_add();
+				case 2:
+					server_del();
+				case 3:
+					server_mod();
+				case 4:
+					server_search();
+				case 5:
+					quit&save();
+				default;
+		}
+	}
+
+}

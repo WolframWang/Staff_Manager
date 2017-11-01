@@ -1,0 +1,72 @@
+客户端：
+(1)登陆：
+int login(void)
+{
+	send(用户登录信息数据包)；   
+	权限号=recv()；
+	if(登陆成功)
+		进入显示界面--->show()；
+	else
+		printf(输入错误，重试)；
+	retrun 权限号；
+}
+(2)
+show(int 权限号)
+{
+	switch(权限号)
+		root：
+			root_menu();
+				switch()
+					case 1:add();
+					case 2:del();
+					case 3:change();
+					case 4:query()；
+					case 5:quit&save();
+					default;
+		user:
+			user_menu();
+				switch()
+					case 1:show_info();
+					case 2:change_password();
+					case 3:quit();
+					default;
+}
+
+add()
+{
+	while(1){
+		添加用户的信息staff_data；
+		发送send；
+
+		判断返回值switch；
+			成功：
+				提示信息；
+			失败：
+				提示信息；
+
+		提示是否继续；	
+	}
+}
+
+staff_manager.db
+
+	base_info.table
+		姓名 工号 年龄 工龄 薪资 地址 考勤 
+		
+	log_info.table
+		用户名 密码 权限
+
+
+struct staff_data{
+	权限号
+	操作方式（add del mod……）
+	姓名 
+	工号 
+	年龄 
+	工龄 
+	薪资 
+	地址
+	考勤
+	
+};
+
